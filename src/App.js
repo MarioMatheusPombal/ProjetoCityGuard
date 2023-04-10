@@ -1,10 +1,13 @@
 import './App.css';
 import Maps from "./maps/maps";
+import ResponsiveAppBar from "./utils/navbar";
+import FixedContainer from "./utils/container";
 
 function App() {
     return (
         <div className="App">
-            <Maps></Maps>
+            <ResponsiveAppBar></ResponsiveAppBar>
+            <FixedContainer></FixedContainer>
         </div>
     );
 }

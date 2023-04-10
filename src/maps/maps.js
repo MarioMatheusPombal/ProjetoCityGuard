@@ -1,15 +1,22 @@
 import React from 'react';
-import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+import {GoogleMap, useJsApiLoader} from '@react-google-maps/api';
 import './map.css';
 
 export default function Maps() {
-    const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "KEY"
     });
     if (!isLoaded) return <div>Loading...</div>;
-    return <Map />;
-}
+    return <div className="map-container">
+        {isLoaded ? (
+            <GoogleMap
+                mapContainerStyle={{width: '100%', height: '100%'}}
+                center={{lat: -10, lng: -48}}
+                zoom={10}
 
-function Map() {
-    return <GoogleMap zoom={10} center={{lat: -10, lng: -48}} mapContainerClassName="map-container"></GoogleMap>
+            >
+            </GoogleMap>
+        ) : <></>}
+    </div>;
 }
