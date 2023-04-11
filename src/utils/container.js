@@ -1,16 +1,37 @@
 import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import Maps from "../maps/maps";
+import FloatingActionButtons from "./buttons";
 
-export default function FixedContainer() {
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
+
+export default function BasicGrid() {
     return (
-        <React.Fragment>
-            <CssBaseline />
-            <Container fixed>
-                <Maps></Maps>
-            </Container>
-        </React.Fragment>
+        <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={0.5}>
+                <Grid item xs={2}>
+                    <Item>
+                            <h4>
+                                Cadastrar
+                                <FloatingActionButtons></FloatingActionButtons>
+                            </h4>
+                    </Item>
+                </Grid>
+                <Grid item xs={10}>
+                    <Item>
+                        <Maps></Maps>
+                    </Item>
+                </Grid>
+            </Grid>
+        </Box>
     );
 }
