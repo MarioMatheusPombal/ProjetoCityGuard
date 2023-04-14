@@ -1,5 +1,4 @@
 import './App.css';
-import Maps from "./maps/maps";
 import ResponsiveAppBar from "./utils/navbar";
 import FixedContainer from "./utils/container";
 
