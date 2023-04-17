@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "funcionarios",
+  "info": {
+    "singularName": "funcionario",
+    "pluralName": "funcionarios",
+    "displayName": "Funcionário"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "funcionarioid": {
+      "type": "uid",
+      "default": "0",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "senha": {
+      "type": "password",
+      "required": true
+    },
+    "foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
