@@ -5,7 +5,7 @@ import './map.css';
 export default function Maps() {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "KEY"
+        googleMapsApiKey: "AIzaSyD1qK_YnwjioBoxDQKWMwplvzlXgbXqRmc"
     });
     if (!isLoaded) return <div>Loading...</div>;
     return <div className="map-container">

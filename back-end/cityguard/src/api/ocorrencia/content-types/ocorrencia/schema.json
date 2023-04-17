@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ocorrencias",
+  "info": {
+    "singularName": "ocorrencia",
+    "pluralName": "ocorrencias",
+    "displayName": "Ocorrência",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "OcorrenciaID": {
+      "type": "uid",
+      "default": "0",
+      "required": true
+    },
+    "Titulo": {
+      "type": "string",
+      "required": true
+    },
+    "Descricao": {
+      "type": "richtext"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Data": {
+      "type": "datetime",
+      "default": "2023-05-19T03:00:00.000Z",
+      "required": true
+    }
+  }
+}
