@@ -1,13 +1,22 @@
 import './App.css';
-import ResponsiveAppBar from "./utils/navbar";
-import FixedContainer from "./utils/container";
+import {Route, Routes} from "react-router-dom";
+import Home from "./paginas/Home";
+import Album from "./paginas/Sobre";
 
 function App() {
     return (
-        <div className="App">
-            <ResponsiveAppBar></ResponsiveAppBar>
-            <FixedContainer></FixedContainer>
-        </div>
+        <>
+            <header>
+
+            </header>
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/home" element={<Home/>}/>
+                    <Route path="/sobre" element={<Album/>}/>
+                </Routes>
+            </main>
+        </>
     );
 }
 

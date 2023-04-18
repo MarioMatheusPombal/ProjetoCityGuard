@@ -1,9 +1,12 @@
 import React from 'react';
+import ResponsiveAppBar from "../utils/navbar";
+import FixedContainer from "../utils/container";
 
 export default function Home() {
     return (
         <div>
-            <h1>Home</h1>
+            <ResponsiveAppBar></ResponsiveAppBar>
+            <FixedContainer></FixedContainer>
         </div>
     );
 }
