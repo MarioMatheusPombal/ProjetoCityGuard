@@ -11,18 +11,20 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import {Link} from "@mui/material";
+import {Icon, Link} from "@mui/material";
+import {redirect} from "react-router-dom";
+import cityguard from "../cityguard.svg";
 
-const pages = [{
-    title: 'sobre',
-    link: '/sobre'
-},
+const pages = [
     {
         title: 'funcionários',
         link: '/funcionarios'
+    },
+    {
+        title: 'sobre',
+        link: '/sobre'
     }
-    ];
+];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -41,6 +43,10 @@ function ResponsiveAppBar() {
         setAnchorElNav(null);
     };
 
+    const redirecionar = (page) => {
+        redirect(page.link);
+    }
+
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
@@ -49,7 +55,7 @@ function ResponsiveAppBar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}}/>
+                    <Icon src={cityguard}></Icon>
                     <Typography
                         variant="h6"
                         noWrap
@@ -97,7 +103,7 @@ function ResponsiveAppBar() {
                                 display: {xs: 'block', md: 'none'},
                             }}
                         >
-                            {pages.map((page,index) => (
+                            {pages.map((page, index) => (
                                 <MenuItem key={index} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
                                         <Link href={page.link}>{page.title}</Link>
@@ -106,7 +112,7 @@ function ResponsiveAppBar() {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}}/>
+                    {/*<img src={cityguard} alt="cityguard" width="100" height="100" style={{display: {xs: 'flex', md: 'none'}}}/>*/}
                     <Typography
                         variant="h5"
                         noWrap
@@ -123,16 +129,17 @@ function ResponsiveAppBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        CITYGUARD
+                        CityGuard
                     </Typography>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-                        {pages.map((page,index) => (
+                        {pages.map((page, index) => (
                             <Button
                                 key={index}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => redirecionar(page)}
                                 sx={{my: 2, color: 'white', display: 'block'}}
                             >
                                 {page.title}
+                                {/*<Link href={page.link}>{page.title}</Link>*/}
                             </Button>
                         ))}
                     </Box>
@@ -140,7 +147,7 @@ function ResponsiveAppBar() {
                     <Box sx={{flexGrow: 0}}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                <Avatar alt="Mindy Baker" src="/static/images/avatar/3.jpg" />
+                                <Avatar alt="Mindy Baker" src="/static/images/avatar/3.jpg"/>
                             </IconButton>
                         </Tooltip>
                         <Menu
