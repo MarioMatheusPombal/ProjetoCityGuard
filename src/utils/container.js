@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Maps from "../maps/maps";
 import FloatingActionButtons from "./buttons";
 
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -16,17 +16,14 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BasicGrid() {
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{flexGrow: 1}}>
             <Grid container spacing={0.5}>
-                <Grid item xs={2}>
+                <Grid item xs={12}>
                     <Item>
-                            <h4>
-                                Cadastrar
-                                <FloatingActionButtons></FloatingActionButtons>
-                            </h4>
+                        <FloatingActionButtons></FloatingActionButtons>
                     </Item>
                 </Grid>
-                <Grid item xs={10}>
+                <Grid item xs={12}>
                     <Item>
                         <Maps></Maps>
                     </Item>
