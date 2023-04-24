@@ -21,6 +21,10 @@ const pages = [
         link: '/funcionarios'
     },
     {
+        title: 'ocorrências',
+        link: '/ocorrencias'
+    },
+    {
         title: 'sobre',
         link: '/sobre'
     }
