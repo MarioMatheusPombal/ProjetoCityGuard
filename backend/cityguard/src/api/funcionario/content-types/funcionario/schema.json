@@ -4,7 +4,8 @@
   "info": {
     "singularName": "funcionario",
     "pluralName": "funcionarios",
-    "displayName": "Funcionário"
+    "displayName": "Funcionário",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,16 +30,22 @@
       "required": true
     },
     "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "ativo": {
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "Funcao": {
+      "type": "string",
+      "required": true,
+      "default": "Analista"
     }
   }
 }
