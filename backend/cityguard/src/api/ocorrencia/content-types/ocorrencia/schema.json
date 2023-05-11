@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ocorrencias",
+  "info": {
+    "singularName": "ocorrencia",
+    "pluralName": "ocorrencias",
+    "displayName": "ocorrencia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "anexo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "data": {
+      "type": "datetime",
+      "required": true,
+      "default": "2023-05-08T23:00:00.000Z"
+    },
+    "idocorrencia": {
+      "type": "uid",
+      "default": "0",
+      "required": true
+    },
+    "descricao": {
+      "type": "richtext",
+      "maxLength": 5000
+    },
+    "coordenadas": {
+      "type": "string",
+      "required": true,
+      "default": "0"
+    }
+  }
+}

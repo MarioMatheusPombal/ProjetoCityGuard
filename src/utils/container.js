@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Maps from "../maps/maps";
 import FloatingActionButtons from "./buttons";
+import GetOcorrencias from "../paginas/ocorrencias/getOcorrencias";
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -18,12 +19,13 @@ export default function BasicGrid() {
     return (
         <Box sx={{flexGrow: 1}}>
             <Grid container spacing={0.5}>
-                <Grid item xs={12}>
+                <Grid item xs={3}>
                     <Item>
-                        <FloatingActionButtons></FloatingActionButtons>
+                        {/*<FloatingActionButtons></FloatingActionButtons>*/}
+                        <GetOcorrencias></GetOcorrencias>
                     </Item>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={9}>
                     <Item>
                         <Maps></Maps>
                     </Item>

@@ -1,10 +1,7 @@
 import * as React from 'react';
 import ResponsiveAppBar from "../utils/navbar";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import {styled} from "@mui/material/styles";
-import Formulario from "../utils/FormularioPerfil";
 import Caixascentralizada from "../utils/caixascentralizada";
 
 const Item = styled(Paper)(({theme}) => ({

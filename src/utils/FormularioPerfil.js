@@ -10,7 +10,7 @@ export default function Formulario() {
 
             <div className="form-group">
                 <label htmlFor="CNPJ">CNPJ:</label>
-                <input type="CNPJ" id="CNPJ" name="CNPJ"/><br/>
+                <input type="text" id="CNPJ" name="CNPJ"/><br/>
             </div>
 
             <div className="form-group">
