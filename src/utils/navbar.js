@@ -11,22 +11,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import {Icon, Link} from "@mui/material";
 import {redirect} from "react-router-dom";
-import cityguard from "../cityguard.svg";
+import {Link} from "react-router-dom";
 
-const pages = [
-    {
-        title: 'funcionários',
-        link: '/funcionarios'
-    },
-    {
-        title: 'sobre',
-        link: '/sobre'
-    }
-];
+const pages = ['Funcionarios', 'Ocorrencias','Sobre'];
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Perfil', 'Assinatura','Sair'];
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -55,7 +45,7 @@ function ResponsiveAppBar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Icon src={cityguard}></Icon>
+                    {/*<Icon src={cityguard}></Icon>*/}
                     <Typography
                         variant="h6"
                         noWrap
@@ -102,17 +92,19 @@ function ResponsiveAppBar() {
                             sx={{
                                 display: {xs: 'block', md: 'none'},
                             }}
+
                         >
                             {pages.map((page, index) => (
                                 <MenuItem key={index} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link href={page.link}>{page.title}</Link>
+                                        <Link style={{textDecoration: "none", color:"white"}} to={`/${page}`}>
+                                            {page}
+                                        </Link>
                                     </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    {/*<img src={cityguard} alt="cityguard" width="100" height="100" style={{display: {xs: 'flex', md: 'none'}}}/>*/}
                     <Typography
                         variant="h5"
                         noWrap
@@ -138,8 +130,9 @@ function ResponsiveAppBar() {
                                 onClick={() => redirecionar(page)}
                                 sx={{my: 2, color: 'white', display: 'block'}}
                             >
-                                {page.title}
-                                {/*<Link href={page.link}>{page.title}</Link>*/}
+                                <Link style={{textDecoration: "none", color:"white"}} to={`/${page}`}>
+                                    {page}
+                                </Link>
                             </Button>
                         ))}
                     </Box>
@@ -168,7 +161,11 @@ function ResponsiveAppBar() {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center">
+                                        <Link style={{textDecoration: "none", color:"black"}} to={`/${setting}`}>
+                                            {setting}
+                                        </Link>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

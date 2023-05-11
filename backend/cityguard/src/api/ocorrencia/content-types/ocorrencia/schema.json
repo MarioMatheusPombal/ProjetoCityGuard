@@ -4,48 +4,53 @@
   "info": {
     "singularName": "ocorrencia",
     "pluralName": "ocorrencias",
-    "displayName": "Ocorrência"
+    "displayName": "ocorrencia",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Titulo": {
+    "titulo": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 50
     },
-    "ocorrenciaid": {
-      "type": "uid",
-      "default": "0",
-      "required": true
-    },
-    "descricao": {
-      "type": "text",
-      "required": true
-    },
-    "imagem": {
+    "anexo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "Latitude": {
-      "type": "string",
-      "required": true
-    },
-    "Longitude": {
-      "type": "string",
-      "required": true
-    },
-    "Ativo": {
+    "ativo": {
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "data": {
+      "type": "datetime",
+      "required": true,
+      "default": "2023-05-08T23:00:00.000Z"
+    },
+    "idocorrencia": {
+      "type": "uid",
+      "default": "0",
+      "required": true
+    },
+    "descricao": {
+      "type": "richtext",
+      "maxLength": 5000
+    },
+    "coordenadas": {
+      "type": "string",
+      "required": true,
+      "default": "0"
     }
   }
 }
