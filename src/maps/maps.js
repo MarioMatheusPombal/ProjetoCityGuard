@@ -21,7 +21,7 @@ export default function Maps({ ocorrencias, setMarkers, setOcorrenciaSelecionada
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map-container",
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/mapbox/streets-v12",
       zoom: 11,
     });
 

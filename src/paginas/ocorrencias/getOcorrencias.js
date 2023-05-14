@@ -10,7 +10,12 @@ import { Add } from "@mui/icons-material";
 import "../styles/ocorrencias.css";
 import { differenceInHours, differenceInMinutes } from "date-fns";
 
-export default function GetOcorrencias({ ocorrencias, showPopup, ocorrenciaSelecionada }) {
+export default function GetOcorrencias({
+  ocorrencias,
+  showPopup,
+  ocorrenciaSelecionada,
+  setDialogAddOpen,
+}) {
   const convertDateToText = (dtOcorrencia) => {
     const date = new Date(dtOcorrencia);
 
@@ -30,7 +35,13 @@ export default function GetOcorrencias({ ocorrencias, showPopup, ocorrenciaSelec
       <section>
         <Typography variant="h6">Ocorrências</Typography>
 
-        <Button variant="outlined" startIcon={<Add />}>
+        <Button
+          variant="outlined"
+          startIcon={<Add />}
+          onClick={() => {
+            setDialogAddOpen(true);
+          }}
+        >
           Criar nova
         </Button>
       </section>
@@ -45,7 +56,7 @@ export default function GetOcorrencias({ ocorrencias, showPopup, ocorrenciaSelec
       >
         {ocorrencias.map((post, index) => (
           <>
-            <ListItem alignItems="flex-start">
+            <ListItem alignItems="flex-start" key={`${index}`}>
               <ListItemButton selected={ocorrenciaSelecionada === index}>
                 <ListItemText
                   primary={post.attributes.titulo}
@@ -68,7 +79,7 @@ export default function GetOcorrencias({ ocorrencias, showPopup, ocorrenciaSelec
                 />
               </ListItemButton>
             </ListItem>
-            <Divider component="li" />
+            <Divider component="li" key={`${index}-divider`} />
           </>
         ))}
       </List>

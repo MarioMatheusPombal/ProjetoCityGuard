@@ -7,7 +7,7 @@ import Maps from "../maps/maps";
 import axios from "axios";
 
 import GetOcorrencias from "../paginas/ocorrencias/getOcorrencias";
-import { differenceInHours, differenceInMinutes } from "date-fns";
+import DialogNovaOcorrencia from "../dialogs/novaOcorrencia";
 const baseURL = "http://localhost:1337/api/ocorrencias/";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -20,6 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BasicGrid() {
   const [markers, setMarkers] = useState([]);
+  const [dialogAddOpen, setDialogAddOpen] = useState(false);
   const [ocorrencias, setOcorrencias] = useState([]);
   const [ocorrenciaSelecionada, setOcorrenciaSelecionada] = useState(null);
 
@@ -54,6 +55,7 @@ export default function BasicGrid() {
               showPopup={togglePopup}
               ocorrenciaSelecionada={ocorrenciaSelecionada}
               setOcorrenciaSelecionada={setOcorrenciaSelecionada}
+              setDialogAddOpen={setDialogAddOpen}
             />
           </Item>
         </Grid>
@@ -67,6 +69,8 @@ export default function BasicGrid() {
           </Item>
         </Grid>
       </Grid>
+
+      <DialogNovaOcorrencia open={dialogAddOpen} setDialogAddOpen={setDialogAddOpen}/>
     </Box>
   );
 }
