@@ -1,15 +1,13 @@
-.lista-ocorrencias{
-    border: 1px solid black;
-    margin-top: 1rem;
-}
-.ul{
-    list-style: none;
+section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#lista-ocorrencias {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100%
 }
