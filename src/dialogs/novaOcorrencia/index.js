@@ -31,7 +31,7 @@ function DialogNovaOcorrencia({ open, setDialogAddOpen }) {
     const coords = markerRef.current.getLngLat();
     const ocorrenciaDTO = {
       titulo: inputTituloRef.current.value,
-      data: format(new Date(), "dd/MM/yyyy HH:mm"),
+      data: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
       descricao: inputDescricaoRef.current.value,
       tipo: type,
       coordenadas: `${coords.lng},${coords.lat}`,
@@ -41,7 +41,7 @@ function DialogNovaOcorrencia({ open, setDialogAddOpen }) {
 
     const { data } = await axios.post(
       `http://localhost:1337/api/ocorrencias/`,
-      JSON.stringify({ data: { ocorrenciaDTO } }),
+      JSON.stringify({ data: ocorrenciaDTO }),
       { headers: { "Content-Type": "application/json" } }
     );
 
