@@ -38,11 +38,6 @@
       "required": true,
       "default": "2023-05-08T23:00:00.000Z"
     },
-    "idocorrencia": {
-      "type": "uid",
-      "default": "0",
-      "required": true
-    },
     "descricao": {
       "type": "richtext",
       "maxLength": 5000

@@ -55,8 +55,8 @@ export default function GetOcorrencias({
         }}
       >
         {ocorrencias.map((post, index) => (
-          <>
-            <ListItem alignItems="flex-start" key={`${index}`}>
+          <div key={index}>
+            <ListItem alignItems="flex-start">
               <ListItemButton selected={ocorrenciaSelecionada === index}>
                 <ListItemText
                   primary={post.attributes.titulo}
@@ -80,7 +80,7 @@ export default function GetOcorrencias({
               </ListItemButton>
             </ListItem>
             <Divider component="li" key={`${index}-divider`} />
-          </>
+          </div>
         ))}
       </List>
     </div>
