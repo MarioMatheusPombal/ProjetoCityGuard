@@ -10,6 +10,8 @@ import { Add } from "@mui/icons-material";
 import "../styles/ocorrencias.css";
 import { differenceInHours, differenceInMinutes } from "date-fns";
 
+
+
 export default function GetOcorrencias({
   ocorrencias,
   showPopup,
@@ -31,9 +33,9 @@ export default function GetOcorrencias({
   };
 
   return (
-    <div>
+    <div className={'DivPrincipal'}>
       <section>
-        <Typography variant="h6">Ocorrências</Typography>
+        <Typography  variant="h6">Ocorrências</Typography>
 
         <Button
           variant="outlined"
@@ -55,10 +57,11 @@ export default function GetOcorrencias({
         }}
       >
         {ocorrencias.map((post, index) => (
-          <div key={index}>
+          <div className={'DivOcorrencias'} key={index}>
             <ListItem alignItems="flex-start">
               <ListItemButton selected={ocorrenciaSelecionada === index}>
                 <ListItemText
+                    primaryTypographyProps={{fontWeight:"bold",color:"white", fontSize:"1.3em", textAlign:"center"}}
                   primary={post.attributes.titulo}
                   onClick={() => {
                     showPopup(index);
@@ -66,14 +69,16 @@ export default function GetOcorrencias({
                   secondary={
                     <React.Fragment>
                       <Typography
-                        sx={{ display: "inline" }}
+                        sx={{ fontWeight:"bold", color: "white", lineHeight:"2.43", display:"block", textAlign:"center" }}
                         component="span"
                         variant="body2"
-                        color="text.primary"
                       >
                         {convertDateToText(post.attributes.data)}
                       </Typography>
-                      {` - ${post.attributes.descricao || "sem descrição"}`}
+                      <Typography
+                        sx={{color:"white", paddingTop:"10px", textAlign:"center", fontSize:"0.9em"}}>
+                        {`  ${post.attributes.descricao || "sem descrição"}`}
+                      </Typography>
                     </React.Fragment>
                   }
                 />
@@ -83,6 +88,8 @@ export default function GetOcorrencias({
           </div>
         ))}
       </List>
+
+
     </div>
   );
 }

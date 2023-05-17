@@ -1,0 +1,99 @@
+#perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+
+
+    margin: 20px 20px;
+}
+
+#cabeçalho{
+
+
+    background-color: #1976D2;
+    border-radius: 5px 5px 0px 0px;
+    width: 60%;
+    box-shadow: 1px 1px 1px black;
+    height: 40vh;
+}
+#titulo{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.0em;
+}
+#foto-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    height: 110px;
+}
+#bandeira-estado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    position: relative;
+
+    bottom: 100px;
+    left: 170px;
+
+}
+#to{
+    width: 155px;
+    height: 110px;
+
+    position: relative;
+
+    bottom: 115px;
+    left: 170px;
+}
+#info-basica{
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.5em;
+
+
+    position: relative;
+
+    bottom: 100px;
+    left: 170px;
+}
+
+#conteudo{
+    background-color: white;
+    box-shadow: 0.3px 0.3px 2px black;
+
+    width: 60%;
+    height: 60%;
+}
+
+#informaçoes{
+    text-align: center;
+}
+
+#botao{
+    border: 0px;
+    background-color: #1976D2;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+
+    width: 30%;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.seçoes{
+    color: #1976D2;
+}
+.dados{
+    color: #183382;
+}
+

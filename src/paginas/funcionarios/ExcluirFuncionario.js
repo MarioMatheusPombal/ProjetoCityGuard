@@ -25,13 +25,13 @@ export default function ExcluirFuncionario() {
     return (
         <div>
             <div>
-                <h1 className={'title'}>Excluir Funcionario</h1>
+                <h1 className={'title2'}>Excluir Funcionário</h1>
                 <form>
                     <label>
-                        Funcionario ID:
-                        <input type="text" name="funcionarioid" onChange={(e) => setFuncionarioid(e.target.value)}/>
+                        ID do Funcionário:
+                        <input className={'text'} type="text" name="funcionarioid" onChange={(e) => setFuncionarioid(e.target.value)}/>
                     </label>
-                    <button type="button" onClick={() => excluirFuncionarioId(funcionarioid)}>Excluir</button>
+                    <button type="submit" onClick={() => excluirFuncionarioId(funcionarioid)}>Excluir</button>
                 </form>
             </div>
         </div>

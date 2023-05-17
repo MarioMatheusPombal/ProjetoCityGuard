@@ -13,6 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import {redirect} from "react-router-dom";
 import {Link} from "react-router-dom";
+import { Icon } from '@mui/material';
+import logoCityGuard from '../imagens/cityguardnew_adobe_express.svg'
+
 
 const pages = ['Funcionarios', 'Ocorrencias','Sobre'];
 
@@ -41,11 +44,15 @@ function ResponsiveAppBar() {
         setAnchorElUser(null);
     };
 
+
+
+
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/*<Icon src={cityguard}></Icon>*/}
+
                     <Typography
                         variant="h6"
                         noWrap
@@ -140,7 +147,7 @@ function ResponsiveAppBar() {
                     <Box sx={{flexGrow: 0}}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                <Avatar alt="Mindy Baker" src="/static/images/avatar/3.jpg"/>
+                                <Avatar alt="Mindy Baker" src={logoCityGuard}/>
                             </IconButton>
                         </Tooltip>
                         <Menu

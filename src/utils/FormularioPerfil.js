@@ -1,112 +1,139 @@
 import React from 'react';
+import perfil from '../paginas/styles/perfil.css';
+import imagem from '../imagens/cityguardnew_adobe_express.svg';
+import bandeira from '../imagens/Bandeira_do_Tocantins.svg.png';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+function createData(titulo, data, tipo ,status) {
+    return { titulo, data, tipo, status };
+}
+
+const rows = [
+    createData('Ocorrência 1', '17/03/2023', 'Incêndio', 'Resolvida'),
+    createData('Ocorrência 2', '21/02/2023', 'Acidente', 'Resolvida'),
+    createData('Ocorrência 3', '19/04/2023', 'Assalto', 'Em aberto'),
+
+];
+
 
 export default function Formulario() {
     return (
-        <form>
-            <div className="form-group">
-                <label htmlFor="nomedaempresa">Nome Da Empresa:</label>
-                <input type="text" id="nomedaempresa" name="nomedaempresa"/><br/>
+
+        <div id='perfil'>
+            <div id='cabeçalho'>
+                <div id='titulo'>
+                    <h1>PERFIL</h1>
+                </div>
+
+                <div id='foto-perfil'>
+                    <img src={imagem}></img>
+                </div>
+
+                <div id='info-basica'>
+
+                    <h2>NOME: CityGuard</h2>
+                    <h2>PROPRIETÁRIO: Mario Matheus</h2>
+                    <h2>E-MAIL: CityGuard.gmail.com</h2>
+                    <h2>TELEFONE: (00) 00000-0000</h2>
+                </div>
+
+                <div id='bandeira-estado'>
+                    <img id='to' src={bandeira}></img>
+                </div>
+
             </div>
 
-            <div className="form-group">
-                <label htmlFor="CNPJ">CNPJ:</label>
-                <input type="text" id="CNPJ" name="CNPJ"/><br/>
-            </div>
+            <div id='conteudo'>
+                <div id='informaçoes'>
 
-            <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email"/><br/>
-            </div>
+                    <h3 className='seçoes'>Dados e Documentações</h3>
 
-            <div className="form-group">
-                <label htmlFor="telefone">Telefone:</label>
-                <input type="telefone" id="telefone" name="telefone"/><br/>
-            </div>
+                    <h4 className='dados'>CNPJ</h4>
+                    <p>00000121212121</p>
 
-            <div className="form-group">
-                <label htmlFor="CNAEprincipaldaempresa">CNAE Principal Da Empresa:</label>
-                <input type="CNAEprincipaldaempresa" id="CNAEprincipaldaempresa" name="CNAEprincipaldaempresa"/><br/>
-            </div>
+                    <h4 className='dados'>CNAE Oficial da Empresa</h4>
+                    <p>12.21-21-21</p>
 
-            <div className="form-group">
-                <label htmlFor="cep">CEP:</label>
-                <input type="cep" id="cep" name="cep"/><br/>
-            </div>
+                    <h4 className='dados'>Tipo de contribuinte do IMCS</h4>
+                    <p>Contribuinte IMCS</p>
 
-            <div className="form-group">
-                <label htmlFor="endereco">Endereço:</label>
-                <input type="endereco" id="endereco" name="endereco"/><br/>
-            </div>
+                    <hr></hr>
 
-            <div className="form-group">
-                <label htmlFor="numero">Número:</label>
-                <input type="numero" id="numero" name="numero"/><br/>
-            </div>
-            <div className="form-group">
-                <label htmlFor="complemento">Complemento:</label>
-                <input type="complemento" id="complemento" name="complemento"/><br/>
-            </div>
+                    <h3 className='seçoes'>Localização</h3>
 
-            <div className="form-group">
-                <label htmlFor="bairro">Bairro:</label>
-                <input type="bairro" id="bairro" name="bairro"/><br/>
-            </div>
 
-            <div className="form-group">
-                <label htmlFor="municipio">Município:</label>
-                <input type="municipio" id="municipio" name="municipio"/><br/>
-            </div>
+                    <h4 className='dados'>Endereço</h4>
+                    <p>Quadra 201 Sul - rua NSA</p>
 
-            <div className="form-group">
-                <label htmlFor="estado">Estado:</label>
-                <select id="estado" name="estado" required>
-                    <option value=""></option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select><br/>
-            </div>
+                    <h4 className='dados'>Complemento</h4>
+                    <p>Próximo ao Comics Pub</p>
 
-            <div className="form-group">
-                <label htmlFor="tipodecontribuintedoicms">Tipo De Contribuinte Do ICMS:</label>
-                <input type="tipodecontribuintedoicms" id="tipodecontribuintedoicms"
-                       name="tipodecontribuintedoicms"/><br/>
-            </div>
+                    <h4 className='dados'>Bairro</h4>
+                    <p>Centro</p>
 
-            <div className="form-group">
-                <label htmlFor="inscriçaoestadual">Inscrição Estadual:</label>
-                <input type="inscriçaoestadual" id="inscriçaoestadual" name="inscriçaoestadual"/><br/>
-            </div>
+                    <h4 className='dados'>Número</h4>
+                    <p>00</p>
 
-            <div className="form-group">
-                <input type="submit" value="Enviar"/>
-            </div>
+                    <h4 className='dados'>CEP</h4>
+                    <p>11111-000</p>
 
-        </form>
+                    <h4 className='dados'>Município</h4>
+                    <p>Palmas</p>
+
+                    <h4 className='dados'>Estado</h4>
+                    <p>Tocantins</p>
+
+
+                    <button id='botao' type='submit'>Editar informações</button>
+
+                    <hr></hr>
+
+                    <h3 className='seçoes'>Ocorrências Registradas</h3>
+
+                    <div style={{display:'flex', justifyContent:'center', width:'80%', margin:'auto', marginTop:'40px', marginBottom:'20px'}}>
+                        <TableContainer component={Paper}>
+                            <Table style={{borderColor:'primary', borderWidth:'30px', paddingBottom:'30px'}} sx={{ minWidth: 650 }} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Título da Ocorrência</TableCell>
+                                        <TableCell align="right">Data</TableCell>
+                                        <TableCell align="right">Tipo</TableCell>
+                                        <TableCell align="right">Status</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <TableRow
+                                            key={row.titulo}
+                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        >
+                                            <TableCell component="th" scope="row">
+                                                {row.titulo}
+                                            </TableCell>
+                                            <TableCell align="right">{row.data}</TableCell>
+                                            <TableCell align="right">{row.tipo}</TableCell>
+                                            <TableCell align="right">{row.status}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
     );
 }
 

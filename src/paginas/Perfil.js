@@ -3,6 +3,7 @@ import ResponsiveAppBar from "../utils/navbar";
 import Paper from "@mui/material/Paper";
 import {styled} from "@mui/material/styles";
 import Caixascentralizada from "../utils/caixascentralizada";
+import Formulario from '../utils/FormularioPerfil';
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -21,9 +22,9 @@ export default function Perfil() {
                 <ResponsiveAppBar></ResponsiveAppBar>
             </div>
             <div>
-                <Item>
-                    <Caixascentralizada></Caixascentralizada>
-                </Item>
+
+                <Formulario></Formulario>
+
             </div>
 
         </>

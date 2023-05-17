@@ -19,6 +19,7 @@ export default function Album() {
 
                         <Container maxWidth="sm">
                             <Typography
+                                sx={{ fontSize:"3.55rem", paddingBottom:"20px"}}
                                 component="h1"
                                 variant="h2"
                                 align="center"
@@ -59,7 +60,8 @@ export default function Album() {
                                 melhor para se viver.
                             </Typography>
 
-                            <Typography variant="h6" align="center" color="text.secondary" paddingTop={2} paragraph>
+                            <Typography sx={{ fontWeight:"bold", color:"black"}}
+                                variant="h6" align="center" paddingTop={2} paragraph>
                                 Como utilizar?
                             </Typography>
 
